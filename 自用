@@ -1,0 +1,30 @@
+#!name=自用
+#!desc=自用
+[Script]
+#bilibili港澳台番剧自动切换策略
+#Bili Search = type=http-request,pattern=^https:\/\/app\.bilibili\.com\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+
+百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=20,script-path=  https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
+
+Gear = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/verify_receipt.js,script-update-interval=0
+
+Gear.js = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt url,requires-body=1,max-size=0,script-path=Gear.js.js
+
+http-response https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
+WPS超级会员
+wps.js = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,max-size=0,script-path=wps.js.js
+#皮皮虾去水印
+皮皮虾 = type=http-response,pattern=^https?://.*\.snssdk\.com/bds/(feed/stream|comment/cell_reply|cell/cell_comment|cell/detail|ward/list|user/favorite|user/cell_coment|user/cell_userfeed|user/publish_list),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Liquor030/Sub_Ruleset/master/Script/Super.js,script-update-interval=0
+哔哩哔哩番剧开启1080P+
+哔哩哔哩 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/bilifj.js,script-update-interval=0
+#轻颜相机VIP
+#jddkd = type=http-response,pattern=https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,script-update-interval=0
+#91破解
+91破解 = type=http-response,pattern="https?:\/\/.+\.(my10api|(.*91.*))\.(com|tips|app|xyz)(:\d{2,5})?\/api.php$",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/91ShortVideo.js,script-update-interval=0
+Python Ai解锁会员 = type=http-response,pattern=^http:\/\/ws\.60he\.com\/(book|user).+, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/sngxpro/QuantumultX/master/pythonai/pythonai.js
+
+Dayone = type=http-response,pattern=^https:\/\/dayone\.(me|app)\/api\/(users|v2\/users\/(account-status|receipt))$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Surge-LK/main/scripts/langkhach/dayone.js,script-update-interval=0
+
+
+[MITM]
+hostname = ap*.intsig.net,account.wps.cn,*.snssdk.com,api.bilibili.com,app.bilibili.com, api.bilibili.com, api.live.bilibili.com,*.my10api.com,%APPEND% ws.60he.com,%APPEND% dayone.*,ap?.bilibili.com,%APPEND% pan.baidu.com,pan.baidu.com
